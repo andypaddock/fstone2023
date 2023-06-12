@@ -1,0 +1,131 @@
+.page-content {
+  .content-holder {
+    h1 {
+      font-family: $font-display;
+      font-size: 6rem;
+      font-weight: 300;
+      padding-bottom: 1.5rem;
+      @include respond(phone) {
+        font-size: 4.5rem;
+      }
+    }
+    // .main-content-wrapper {
+    //   &__title {
+    //     font-size: 6rem;
+    //     font-weight: 300;
+    //     font-family: $font-display;
+    //     padding-bottom: 1.5rem;
+    //   }
+    // }
+    h3 {
+      font-family: $font-display;
+      font-size: 2.5rem;
+      font-weight: 300;
+      padding: 3rem 0 1.5rem;
+    }
+    h2 {
+      padding: 3rem 0 0rem;
+      margin-bottom: 2rem;
+      @include respond(phone) {
+        padding: 2rem 0 1rem;
+      }
+    }
+    .old-content {
+      h3,
+      h2 {
+        font-family: $font-display;
+        font-size: 3rem;
+        font-weight: 300;
+        padding: 3rem 0 1.5rem;
+      }
+    }
+    blockquote {
+      color: $color-primary;
+      font-family: $font-display;
+      font-weight: 300;
+      font-size: 2.5rem;
+      padding-right: 6rem;
+      @include respond(phone) {
+        padding: 0;
+      }
+    }
+    cite {
+      color: $color-primary;
+      font-family: $font-primary;
+      font-size: 1.4rem;
+      padding-bottom: 1rem;
+      display: block;
+      font-weight: 700;
+      font-style: italic;
+    }
+    .text-block {
+      padding: 3rem 0;
+      @include respond(phone) {
+        padding: 1rem 0;
+      }
+      a {
+        text-decoration: underline;
+        text-decoration-color: $color-primary;
+        text-underline-offset: 0.5rem;
+      }
+      p {
+        a {
+          text-decoration: underline;
+          text-decoration-color: $color-primary;
+          text-underline-offset: 0.5rem;
+        }
+        // &:first-of-type {
+        //   position: relative;
+        //   &::before {
+        //     content: "";
+        //     width: 1px;
+        //     height: calc(100% - 2rem);
+        //     background: $color-primary;
+        //     position: absolute;
+        //     top: 1rem;
+        //     left: -3rem;
+        //     @include respond(phone) {
+        //       left: -1.5rem;
+        //     }
+        //   }
+        // }
+      }
+      &.events {
+        p {
+          &:first-of-type {
+            &::before {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+
+    ul {
+      font-size: $font-size;
+      padding: 0rem 0 0rem 2rem;
+      margin-left: -2rem;
+      li {
+        padding: 0 0 1.5rem;
+        font-size: 1.8rem;
+        line-height: 1.5;
+        &::marker {
+          color: $color-primary;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+.wp-video {
+  width: 100% !important;
+  padding: 2rem 0 3rem;
+  @include respond(phone) {
+    max-width: 30rem !important;
+  }
+}
+.mejs-container,
+.mejs-container .mejs-controls,
+.mejs-embed,
+.mejs-embed body {
+}

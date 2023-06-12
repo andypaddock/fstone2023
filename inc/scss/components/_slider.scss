@@ -1,0 +1,57 @@
+.testimonial-carousel {
+  display: grid;
+}
+.highlights {
+  .highlight-gallery {
+    display: grid;
+    list-style: none;
+  }
+  .slick-arrow {
+    position: absolute;
+    bottom: -5rem;
+    border: none;
+    &.slick-next {
+      right: 0;
+    }
+    i {
+      padding: 1rem;
+      color: $color-white;
+      background: $color-primary-dark;
+    }
+  }
+}
+.owl-nav {
+  display: grid;
+  justify-items: center;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(12, [col-start] minmax(min-content, 10rem) [col-end])
+    [center-end] minmax(6rem, 1fr)
+    [full-end];
+  .owl-prev {
+    grid-column: col-end 1;
+    display: flex;
+    justify-content: center;
+  }
+  .owl-next {
+    grid-column: col-end 10;
+  }
+}
+.owl-stage {
+  .owl-item {
+    &:not(.center) {
+      img {
+        opacity: 0.3;
+        @include respond(phone) {
+          opacity: 1;
+        }
+      }
+    }
+    .caption {
+      display: block;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 1.6rem;
+    }
+  }
+}

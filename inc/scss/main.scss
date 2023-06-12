@@ -1,0 +1,57 @@
+/* === Global SASS File === //
+Handles import of all Sass and partials, outputting as style.css 
+*/
+
+/*
+Theme Name: Featherstone 2023
+Theme URI: https://silverless.co.uk/
+Author: Silverless
+Author URI: https://silverless.co.uk/
+Description: Our single page theme
+Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Version: 1 
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: featherstone2023
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/bg-video";
+@import "components/button";
+@import "components/gallery";
+@import "components/form";
+@import "components/accordion";
+@import "components/hero";
+@import "components/slider";
+@import "components/highlights";
+@import "components/testimonials";
+@import "components/blog";
+@import "components/modal";
+@import "components/contact-box";
+@import "components/table";
+
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/navigation";
+
+@import "sections/image";
+@import "sections/tabbed";
+
+@import "pages/home";
+@import "pages/contentarea";
+@import "pages/blogs";
+
+@import "vendors/slick.scss";
+@import "vendors/slick-theme.scss";

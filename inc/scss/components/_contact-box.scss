@@ -1,0 +1,162 @@
+.contact-title {
+  padding: 5rem 0;
+}
+.address-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 5rem;
+  &__links {
+    border-right: 1px solid $color-grey-light-1;
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 30rem;
+    @include respond(tab-port) {
+      padding: 3rem 0;
+      flex: 1 1 60rem;
+      align-items: center;
+      border-right: none;
+      border-bottom: 1px solid $color-grey-light-1;
+      .booking-link {
+        padding: 0 0 3rem;
+      }
+    }
+    @include respond(phone) {
+      padding: 4rem;
+    }
+
+    .email-link {
+      @include respond(phone) {
+        padding: 4rem 0 2rem;
+      }
+      a {
+        font-size: 2.2rem;
+        font-family: $font-primary;
+        color: $color-black;
+      }
+    }
+  }
+  &__address {
+    font-size: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0 4rem;
+    flex: 1 1 30rem;
+    @include respond(phone) {
+      padding: 2rem 4rem;
+    }
+    .address-title {
+      font-size: 2.2rem;
+      color: $color-primary;
+      font-weight: 700;
+    }
+    .address-block {
+      flex: 1;
+    }
+    .address-w3w {
+      color: $color-primary;
+      padding: 1rem 0;
+      a {
+        color: $color-primary;
+      }
+    }
+    .address-links {
+      list-style: none;
+    }
+  }
+}
+.form-wrapper {
+  padding: 5rem 0;
+  border-top: 1px solid $color-grey-light-1;
+}
+.gform_fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  > div {
+    flex: 1 1 50rem;
+  }
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    > div {
+      flex: auto;
+    }
+  }
+  .half-form {
+    label {
+      display: none;
+    }
+    input,
+    textarea {
+      width: 100%;
+      border: none;
+      background: $color-grey-light-1;
+      padding: 2rem;
+      font-family: $font-primary;
+      font-size: 1.8rem;
+    }
+  }
+  .gfield--type-textarea {
+    label {
+      display: none;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+    background: $color-grey-light-1;
+    padding: 2rem;
+    font-family: $font-primary;
+    font-size: 1.8rem;
+  }
+
+  fieldset {
+    border: none;
+    padding: 2rem;
+    @include respond(phone) {
+      padding: 0 2rem 0;
+    }
+    legend {
+      display: none;
+    }
+    .ginput_container.ginput_container_consent {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+
+      label {
+        font-size: 1.6rem;
+        padding: 2rem 1rem 2rem 0rem;
+        @include respond(phone) {
+          padding: 0 1rem 2rem 0;
+        }
+      }
+    }
+    .gfield_description.gfield_consent_description {
+      font-size: 1.2rem;
+    }
+  }
+}
+.gform_footer {
+  text-align: right;
+  @include respond(tab-port) {
+    text-align: center;
+    padding: 5rem 0 0;
+  }
+}
+.page-template-contact-page {
+  .mobile-toolbar {
+    display: none;
+  }
+  .footer.container {
+    margin-bottom: 0;
+  }
+}
+
+.inline-link {
+  font-weight: 700;
+}

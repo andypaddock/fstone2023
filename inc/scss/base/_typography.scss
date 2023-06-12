@@ -1,0 +1,85 @@
+%heading {
+  font-family: $font-display;
+  font-weight: 200;
+  letter-spacing: 1.2px;
+  color: $color-secondary;
+}
+
+.heading-1 {
+  @extend %heading;
+  font-family: $font-display;
+  font-size: 6rem;
+  line-height: 1.1;
+}
+
+.heading-2 {
+  @extend %heading;
+  font-family: $font-display;
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.2;
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+  &--dark {
+    color: $color-grey-dark-1;
+  }
+}
+
+.heading-3 {
+  @extend %heading;
+  padding: 3rem 0 1.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.8rem;
+  color: $color-primary;
+  font-family: $font-primary;
+  font-weight: 700;
+
+  &--light {
+    color: $color-grey-light-1;
+  }
+  &--dark {
+    color: $color-grey-dark-1;
+  }
+}
+p {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+.section-text,
+.tabbed-text {
+  .text-block {
+    &.two-col {
+      column-count: 2;
+      column-gap: 1.5rem;
+      @include respond(phone) {
+        column-count: 1;
+        padding: 0 1rem;
+      }
+    }
+  }
+}
+
+.text-cent {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.font-upper {
+  text-transform: uppercase;
+}
+.font-display {
+  font-family: $font-display;
+  letter-spacing: 1.2px;
+}

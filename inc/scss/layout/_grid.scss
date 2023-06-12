@@ -1,0 +1,177 @@
+/*=====MASTER GRID RULES=====*/
+
+.container {
+  display: grid;
+  // grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(12, [col-start] minmax(min-content, 10rem) [col-end])
+    [center-end] minmax(6rem, 1fr)
+    [full-end];
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns:
+      [full-start] minmax(1rem, 1fr) [center-start] repeat(
+        12,
+        [col-start] minmax(min-content, 10rem) [col-end]
+      )
+      [center-end] minmax(1rem, 1fr) [full-end];
+  }
+
+  // @media only screen and (max-width: $bp-medium) {
+  //   grid-template-rows: 6rem calc(100vh - 6rem);
+  // }
+}
+
+/*=====SECTION GRID RULES=====*/
+
+section {
+  .flex-col {
+    @media only screen and (max-width: $bp-small) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.row {
+  grid-column: center-start / center-end;
+  &--extended {
+    grid-column: full-start / full-end;
+  }
+  &.col-2 {
+    grid-column: col-start 6 / col-end 7;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: center-start / center-end !important;
+    }
+  }
+  &.col-4 {
+    grid-column: col-start 5 / col-end 8;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: center-start / center-end !important;
+    }
+  }
+  &.col-6 {
+    grid-column: col-start 4 / col-end 9;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: center-start / center-end !important;
+    }
+  }
+  &.col-8 {
+    grid-column: col-start 3 / col-end 11;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: center-start / center-end !important;
+    }
+  }
+  &.col-10 {
+    grid-column: col-start 2 / col-end 11;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: center-start / center-end !important;
+    }
+  }
+}
+
+.mb-sm {
+  padding-bottom: 5rem;
+}
+.mb-md {
+  padding-bottom: 9rem;
+}
+.mb-lg {
+  padding-bottom: 15rem;
+}
+.mb-hg {
+  padding-bottom: 20rem;
+}
+.page-content {
+  @include respond(tab-land) {
+    margin-top: 10rem;
+  }
+  .content-wrapper {
+    &__left {
+      grid-column: center-start / col-end 7;
+      margin: 5rem 4rem 5rem 2rem;
+      display: flex;
+      // direction: rtl;
+      @include respond(tab-port) {
+        overflow: unset;
+        height: auto;
+        justify-content: center;
+        grid-column: center-start / center-end;
+        order: 1;
+        margin: 5rem 4rem;
+      }
+      .scroll-holder {
+        flex: 1;
+        @include respond(tab-port) {
+          display: none;
+        }
+      }
+      .content-holder {
+        flex-basis: 55rem;
+      }
+    }
+    &__right {
+      grid-column: col-end 7 / full-end;
+      height: 100vh;
+      position: sticky;
+      position: -webkit-sticky;
+      position: -moz-sticky;
+      position: -ms-sticky;
+      position: -o-sticky;
+      top: 0;
+      margin-top: -16.9rem;
+      z-index: -1;
+      @include backgroundCover;
+      @include respond(tab-port) {
+        margin-top: 0;
+        height: 35vh;
+        position: initial;
+        grid-column: full-start / full-end;
+      }
+    }
+    &__full {
+      grid-column: center-start / center-end;
+      min-height: calc(100vh - 38rem);
+    }
+    /* width */
+    ::-webkit-scrollbar {
+      width: 0.3rem;
+    }
+
+    /* Track */
+    // ::-webkit-scrollbar-track {
+    //   background: #f1f1f1;
+    // }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: $color-primary;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    @include respond(phone) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.page-parent,
+.page-child {
+  .page-content .content-wrapper {
+    &__left {
+      // height: calc(100vh - 49rem);
+      @include respond(phone) {
+        height: auto;
+      }
+    }
+  }
+}
+main {
+  @include respond(phone) {
+    margin-top: 10rem;
+  }
+}

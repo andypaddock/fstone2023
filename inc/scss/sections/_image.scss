@@ -1,0 +1,157 @@
+.section-image {
+  img {
+    max-width: 100%;
+  }
+}
+.section-triple-image {
+  .triple-image-block {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+    > div {
+      flex: 1 1 30rem;
+    }
+  }
+}
+.image-link-block {
+  background: $color-white;
+  img {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    object-position: top;
+  }
+  a {
+    text-decoration: none;
+    color: $color-black;
+    text-align: center;
+  }
+  .text-link {
+    padding: 1.5rem 0;
+    display: block;
+  }
+}
+.single-image,
+.link-image {
+  position: relative;
+  padding: 4rem 0;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+  .text-link {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    padding: 1.5rem 4rem;
+    background: $color-white;
+    text-decoration: none;
+    color: $color-black;
+    @include respond(phone) {
+      left: 2rem;
+      text-align: center;
+    }
+  }
+}
+.link-image {
+  height: 20vw;
+  max-height: 30rem;
+  @include respond(phone) {
+    min-height: 25vh;
+  }
+}
+.single-image {
+  height: 50rem;
+}
+.text-image-wrapper {
+  display: flex;
+  flex-flow: wrap;
+  grid-gap: 2rem;
+  > div {
+    flex: 1 1 30rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include respond(phone) {
+        margin-top: 3rem;
+      }
+    }
+  }
+  &.image-left {
+    flex-direction: row-reverse;
+  }
+}
+.team-image-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 3rem;
+  padding: 3rem 20% 3rem 0;
+  @include respond(tab-port) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 0 3rem 0;
+  }
+  @include respond(phone) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team-member {
+    display: grid;
+    text-align: center;
+    img {
+      width: 100%;
+      height: 15rem;
+      object-fit: cover;
+      @include respond(phone) {
+        height: 25rem;
+      }
+    }
+    .team-bio {
+      padding: 2rem;
+    }
+    .team-caption {
+      padding: 1rem 0 0;
+      .heading-3 {
+        padding: 0;
+      }
+
+      .team-position {
+        a {
+          color: $color-primary;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+// @media only screen and (max-width: $bp-medium) {
+//   .team-image-block {
+//     grid-template-columns: repeat(2, 1fr);
+//     .team-member {
+//       flex: 1 1 30rem;
+//     }
+//   }
+// }
+figure {
+  margin: 0;
+}
+.company-logo {
+  padding: 3rem 0;
+  display: flex;
+  grid-gap: 2rem;
+  flex-wrap: wrap;
+  &__image {
+    flex: 1 15rem;
+    padding: 1rem;
+    @include respond(phone) {
+      padding: 1rem 12%;
+    }
+    img {
+      width: 100%;
+      height: 10rem;
+      object-fit: contain;
+    }
+  }
+}

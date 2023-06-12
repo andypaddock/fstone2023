@@ -1,0 +1,1 @@
+<h2 class="heading-1"><?php the_sub_field('title'); ?></h2>

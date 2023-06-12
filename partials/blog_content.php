@@ -1,6 +1,6 @@
 <?php $terms = get_the_category($post->ID);
 $mainImage = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
-<div class="mix tile <?php foreach ($terms as $term) echo ' ' . $term->slug; ?>">
+<div class=" tile <?php foreach ($terms as $term) echo ' ' . $term->slug; ?>">
     <a href="<?php echo get_permalink($post->ID); ?>">
         <div class="post-image" style="background-image: url(<?php echo $mainImage; ?>)">
 
@@ -8,7 +8,7 @@ $mainImage = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
     </a>
     <div class="post-text">
 
-        <h2 class="heading-1">
+        <h2 class="heading-4">
             <a href="<?php echo get_permalink($post->ID); ?>">
                 <?php the_title(); ?>
             </a>

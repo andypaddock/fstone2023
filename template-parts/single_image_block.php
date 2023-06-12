@@ -5,5 +5,6 @@
 
         <?php echo wp_get_attachment_image($image, 'large'); ?>
 
+
     </div>
 </div>

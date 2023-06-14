@@ -11,12 +11,10 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content=" ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>
         <?php 
         if ( is_home() ) {

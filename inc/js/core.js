@@ -183,7 +183,7 @@ jQuery(document).ready(function ($) {
   //==============BLOG READ MORE AJAX CALL
 
 
-  var ppp = 6; // Post per page
+  var ppp = 4; // Post per page
   var pageNumber = 1;
 
 

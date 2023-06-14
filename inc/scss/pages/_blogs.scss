@@ -2,3 +2,72 @@
   color: $color-primary-dark;
   padding: 0 0 2rem;
 }
+.blog-post-feed {
+  .post-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 3rem;
+    &--item {
+      flex: 1 1 20rem;
+      border: 1px solid #e2e4e6;
+      display: flex;
+      flex-direction: column;
+      .post-image {
+        height: 14rem;
+        @include backgroundCover;
+      }
+      .post-text {
+        padding: 0 2rem;
+        flex: 1;
+        .meta {
+          color: $color-primary;
+          padding: 2rem 0;
+          font-size: 1.2rem;
+        }
+        h2 {
+          padding: 0;
+        }
+        .heading-4 {
+          font-family: $font-display;
+          font-weight: initial;
+        }
+      }
+      .post-link {
+        padding: 2rem;
+        a {
+          color: $color-primary;
+          display: flex;
+          align-items: center;
+          font-family: $font-display;
+          i {
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+    @media only screen and (min-width: $bp-large) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .btn {
+    text-align: center;
+    padding: 4rem 0;
+    button {
+      background: $color-primary;
+      padding: 1rem 5rem;
+      color: white;
+      border-color: transparent;
+      text-transform: lowercase;
+      font-family: $font-display;
+      font-size: 2.2rem;
+      cursor: pointer;
+    }
+  }
+}
+.additional-news {
+  padding: 8rem 0;
+  .blog-post-feed {
+    padding: 5rem 0 0;
+  }
+}

@@ -1,28 +1,28 @@
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  .mix {
-    background: $color-white;
-  }
-  .post-image {
-    @include backgroundCover;
-    height: 20vw;
-    min-height: 20rem;
-  }
-  .post-text {
-    text-align: center;
-    padding: 3rem 2rem 1rem;
-    .heading-1 {
-      padding-bottom: 3rem;
-    }
-  }
-  .post-link {
-    text-align: center;
-    padding: 0 2rem 2rem;
-    text-transform: uppercase;
-  }
-}
+// .post-grid {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr);
+//   grid-gap: 2rem;
+//   .mix {
+//     background: $color-white;
+//   }
+//   .post-image {
+//     @include backgroundCover;
+//     height: 20vw;
+//     min-height: 20rem;
+//   }
+//   .post-text {
+//     text-align: center;
+//     padding: 3rem 2rem 1rem;
+//     .heading-1 {
+//       padding-bottom: 3rem;
+//     }
+//   }
+//   .post-link {
+//     text-align: center;
+//     padding: 0 2rem 2rem;
+//     text-transform: uppercase;
+//   }
+// }
 .post-card {
   grid-column: col-start 2 / col-end 11;
   padding: 0 0 10rem;

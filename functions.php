@@ -186,7 +186,7 @@ function silver_hero_image()
 function more_post_ajax()
 {
 
-	$ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 3;
+	$ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 2;
 	$page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
 
 	header("Content-Type: text/html");

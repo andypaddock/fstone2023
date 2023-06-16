@@ -8,6 +8,7 @@ header {
   .nav-logo {
     display: flex;
     justify-content: center;
+    padding-right: 2rem;
     svg {
       height: 8rem;
       path,
@@ -28,7 +29,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 2.2rem 4rem;
-    width: 24rem;
+    width: 15rem;
     a {
       color: $color-white;
       font-size: 2.2rem;
@@ -116,7 +117,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    grid-column: center-start / col-end 5;
+    grid-column: center-start / col-end 4;
   }
   &__center {
     grid-column: col-start 6 / col-end 7;
@@ -126,8 +127,8 @@ header {
   &__right {
     grid-column: col-start 8 / full-end;
     display: flex;
-    justify-content: space-between;
-    padding-left: 10rem;
+    justify-content: flex-end;
+    padding-left: 0rem;
     nav {
       display: flex;
       flex-direction: column;

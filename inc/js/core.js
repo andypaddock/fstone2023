@@ -295,7 +295,7 @@ var lightbox = new FsLightbox();
 
 const links = document.querySelectorAll('a');
 links.forEach(link => {
-  const isExternal = link.href.startsWith('http') && !link.href.includes(window.location.origin) && !link.href.includes('dashboard') && !link.href.includes('hubspot.com');
+  const isExternal = link.href.startsWith('http') && !link.href.includes(window.location.origin) && !link.href.includes('dashboard') && !link.href.includes('hubspot.com') && !link.href.includes('calendly.com') && !link.href.includes('flywheelstaging.com');
   if (isExternal) {
     link.addEventListener('click', e => {
       e.preventDefault();

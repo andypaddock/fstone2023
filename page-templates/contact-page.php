@@ -118,11 +118,14 @@ get_header(); ?>
                 </div>
             </div>
             <div class="form-wrapper">
-                <?php
+                <!-- <?php
                 if (get_field('form_shortcode', 'options')) {
                     echo do_shortcode(get_field('form_shortcode', 'options'));
                 }
-                ?>
+                ?> -->
+                <div class="embed-form">
+                    <?php the_field('embed_code','options');?>
+                </div>
             </div>
 
 

@@ -1,6 +1,7 @@
 .meta {
   color: $color-primary-dark;
   padding: 0 0 2rem;
+  font-family: $font-display;
 }
 .blog-post-feed {
   .post-grid {
@@ -69,5 +70,31 @@
   padding: 8rem 0;
   .blog-post-feed {
     padding: 5rem 0 0;
+  }
+}
+.breadcrumbs {
+  padding: 5rem 0;
+  &--wrapper {
+    list-style: none;
+    display: flex;
+  }
+  &--item {
+    display: flex;
+    align-items: center;
+    a {
+      color: #9a999a;
+    }
+    i {
+      color: #9a999a;
+      padding: 0 0.5rem;
+      font-size: 1.2rem;
+    }
+  }
+  &--link {
+    align-items: center;
+    color: $color-primary;
+    font-family: $font-display;
+    font-size: 1.2rem !important;
+    text-transform: lowercase;
   }
 }

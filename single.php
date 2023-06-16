@@ -12,6 +12,32 @@ get_header(); ?>
     <div class="container content-wrapper">
         <div class="content-wrapper__left">
             <div class="content-holder">
+                <div class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+                    <ul class="breadcrumbs--wrapper">
+                        <li class="breadcrumbs--item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <a class="breadcrumbs--link" href="/" itemprop="item">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                            <i class="fa-sharp fa-light fa-chevron-right"></i>
+                        </li>
+                        <li class="breadcrumbs--item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <a class="breadcrumbs--link" href="/news" itemprop="item">
+                                <span itemprop="name">News</span>
+                            </a>
+                            <meta itemprop="position" content="2">
+                            <i class="fa-sharp fa-light fa-chevron-right"></i>
+                        </li>
+                        <li class="breadcrumbs--item" itemprop="itemListElement" itemscope
+                            itemtype="https://schema.org/ListItem">
+                            <span class="breadcrumbs--link"
+                                itemprop="name"><?php echo mb_strimwidth(get_the_title(), 0, 20, '...');?></span>
+                            <meta itemprop="position" content="3">
+                        </li>
+                    </ul>
+                </div>
 
                 <?php if (!get_field('remove_old')) : ?>
                 <div class="old-content">

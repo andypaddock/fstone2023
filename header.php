@@ -64,7 +64,7 @@
         s.parentNode.insertBefore(_cg, s);
     })();
     </script>
-
+    <meta name="google-site-verification" content="y6_t_N57APJGUgqXxdiI054xesSXOP5vcqhRLqUbcjU" />
 </head>
 
 <body <?php body_class(); ?>>

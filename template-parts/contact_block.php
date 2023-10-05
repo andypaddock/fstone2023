@@ -1,6 +1,5 @@
 <?php $bgColor = get_sub_field('switch_bg'); ?><section
-    class="container section-contact <?php if ($bgColor == true) : echo 'alt-bg';
-                                                                                            endif; ?> mb-<?php the_sub_field('margin_bottom'); ?>"
+    class="container section-contact <?php if ($bgColor == true) : echo 'alt-bg'; endif; ?> mb-<?php the_sub_field('margin_bottom'); ?>"
     <?php if (get_sub_field('section_id')) : ?>id="<?php the_sub_field('section_id'); ?>" <?php endif; ?>>
     <div class="row <?php the_sub_field('column_size'); ?>">
         <div id="contact-form" class="contact-form">

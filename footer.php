@@ -119,7 +119,7 @@
 </footer>
 <div class="mobile-toolbar">
     <div class="portal-link__mobile"> <?php
-                                        $link = get_field('portal_link', 'options');
+                                        $link = get_field('book_call', 'options');
                                         if ($link) :
                                             $link_url = $link['url'];
                                             $link_title = $link['title'];
@@ -131,7 +131,7 @@
     </div>
     <div class="contact-link__mobile">
 
-<!--         <?php
+        <!--         <?php
         $link = get_field('call_button', 'options');
         if ($link) :
             $link_url = $link['url'];

@@ -1,13 +1,8 @@
 //@prepros-prepend fslightbox.js
-//@prepros-prepend owl.carousel.min.js
 //@prepros-prepend slick.min.js
 //@prepros-prepend scrollreveal.js
 
 jQuery(document).ready(function ($) {
-
-
-
-
   /* ADD CLASS ON SCROLL*/
 
   $(window).scroll(function () {
@@ -20,43 +15,11 @@ jQuery(document).ready(function ($) {
     }
   });
 
-  // ========== Controller for lightbox elements
-
-
-
-  // ========== NAVBAR SCROLL AWAY
-
-
-  //  $(document).ready(function () {
-  //   "use strict";
-
-  //   var c,
-  //     currentScrollTop = 0,
-  //     navbar = $("#navbar");
-
-  //   $(window).scroll(function () {
-  //     var a = $(window).scrollTop();
-  //     var b = navbar.height();
-
-  //     currentScrollTop = a;
-
-  //     if (c < currentScrollTop && a > b + b) {
-  //       navbar.addClass("scrollUp");
-  //     } else if (c > currentScrollTop && !(a <= b)) {
-  //       navbar.removeClass("scrollUp");
-  //     }
-  //     c = currentScrollTop;
-  //   });
-  // });
-
-
-
-
   //=========== Slick Slider
 
-  $('.testimonial-carousel').slick({
+  $(".testimonial-carousel").slick({
     centerMode: false,
-    centerPadding: '125px',
+    centerPadding: "125px",
     slidesToShow: 1,
     arrows: false,
     dots: true,
@@ -64,16 +27,14 @@ jQuery(document).ready(function ($) {
     autoplaySpeed: 5000,
   });
 
-  $('.hero-slider').slick({
+  $(".hero-slider").slick({
     centerMode: false,
-    centerPadding: '125px',
+    centerPadding: "125px",
     slidesToShow: 1,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 7000,
   });
-
-
 
   $(document).ready(function () {
     $(".block__title").click(function (event) {
@@ -85,13 +46,7 @@ jQuery(document).ready(function ($) {
     });
   });
 
-
   //=========== Scroll Reveal
-
-
-
-
-
 
   // var slideLeft = {
   //     distance: "40px",
@@ -133,63 +88,51 @@ jQuery(document).ready(function ($) {
   ScrollReveal().reveal(".fmtop", slideDown);
   ScrollReveal().reveal(".fmbottom", slideUp);
   //   ScrollReveal().reveal(".fmright", slideRight);
-  ScrollReveal().reveal('.tile', tileDown);
+  ScrollReveal().reveal(".tile", tileDown);
   //   ScrollReveal().reveal(".row-default", slideRight);
   //   ScrollReveal().reveal(".row-reverse", slideLeft);
-
 
   // ScrollReveal().reveal('.tile', { duration   : 600,
   //    delay: 500,
   //     useDelay: 'onload',
   //     reset: true,
   //     reset      : true,
-  //     viewFactor : 0, 
+  //     viewFactor : 0,
 
   //   });
 
-
   // Show the first tab and hide the rest
-  $('#tabs-nav li:first-child').addClass('active');
-  $('.tab-content').hide();
-  $('.tab-content:first').show();
+  $("#tabs-nav li:first-child").addClass("active");
+  $(".tab-content").hide();
+  $(".tab-content:first").show();
 
   // Click function
-  $('#tabs-nav li').click(function () {
-    $('#tabs-nav li').removeClass('active');
-    $(this).addClass('active');
-    $('.tab-content').hide();
+  $("#tabs-nav li").click(function () {
+    $("#tabs-nav li").removeClass("active");
+    $(this).addClass("active");
+    $(".tab-content").hide();
 
-    var activeTab = $(this).find('a').attr('href');
+    var activeTab = $(this).find("a").attr("href");
     $(activeTab).fadeIn();
     return false;
   });
 
-
   // NAV BAR
 
-  $('.burger').click(function () {
-    $('.mobile-header').toggleClass('is--active');
-    $('.mobile-nav').toggleClass('is--active');
+  $(".burger").click(function () {
+    $(".mobile-header").toggleClass("is--active");
+    $(".mobile-nav").toggleClass("is--active");
   });
 
-
-
-
-
-
-
-
-
   //==============BLOG READ MORE AJAX CALL
-
 
   var ppp = 4; // Post per page
   var pageNumber = 1;
 
-
   function load_posts() {
     pageNumber++;
-    var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=more_post_ajax';
+    var str =
+      "&pageNumber=" + pageNumber + "&ppp=" + ppp + "&action=more_post_ajax";
     $.ajax({
       type: "POST",
       dataType: "html",
@@ -207,85 +150,35 @@ jQuery(document).ready(function ($) {
       },
       error: function (jqXHR, textStatus, errorThrown) {
         $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-      }
-
+      },
     });
     return false;
   }
 
-  $("#more_posts").on("click", function () { // When btn is pressed.
+  $("#more_posts").on("click", function () {
+    // When btn is pressed.
     $("#more_posts").attr("disabled", true); // Disable the button, temp.
     load_posts();
-    $(this).insertAfter('#ajax-posts'); // Move the 'Load More' button to the end of the the newly added posts.
+    $(this).insertAfter("#ajax-posts"); // Move the 'Load More' button to the end of the the newly added posts.
   });
 
+  $(".mobile-nav__menu .menu-item-has-children").append(
+    "<div class=more></div>"
+  );
 
-
-
-  $(".mobile-nav__menu .menu-item-has-children").append("<div class=more></div>");
-
-  $('.more').click(function () {
-    console.log('clicked');
+  $(".more").click(function () {
+    console.log("clicked");
   });
 
   //===========SUBMENU OPEN
 
-
-  $('.more').click(function (e) {
-    $('.sub-menu').removeClass('is-expanded');
-    $(this).parent().find('.sub-menu').addClass('is-expanded');
+  $(".more").click(function (e) {
+    $(".sub-menu").removeClass("is-expanded");
+    $(this).parent().find(".sub-menu").addClass("is-expanded");
 
     e.preventDefault();
   });
-
-
-  // $(window).bind('orientationchange', function (event) {
-  //     location.reload(true);
-  // });
-
-
-  // // Open external links in a popup modal notice
-  // $(window).on('load', function(){
-
-  // 	$.expr[":"].external = function(a) {
-  // 		//var linkHref = a.hostname;
-  // 		//var domainHref = location.hostname;
-
-  // 		var linkhn = a.hostname.split('.').reverse();
-  // 		var linkHref = linkhn[1] + "." + linkhn[0];
-
-  // 		var domainhn = window.location.hostname.split('.').reverse();
-  // 		var domainHref = domainhn[1] + "." + domainhn[0];
-
-  // 		return !a.href.match(/^mailto\:/) && !a.href.match(/^tel\:/) && linkHref !== domainHref;
-  // 	};
-
-  // 	$("a:external").addClass("ext_link");
-
-  // 	$(function() {
-
-  // 		$('a.ext_link').click(function() {
-  // 			 // open a modal 
-  // 			$('a:external').attr('data-toggle', 'modal');
-  // 			$('a:external').attr('data-target', '#speedbump');
-  // 			//go to link on modal close
-  // 			var url = $(this).attr('href');
-  // 			$('.btn-modal.btn-continue').click(function() {
-  // 				window.open(url);
-  // 				$('.btn-modal.btn-continue').off();
-  // 			});
-  // 			$('.btn-modal.btn-close').click(function() {
-  // 				$('#speedbump').modal('hide');
-  // 				$('.btn-modal.btn-close').off();
-  // 			}); 
-  // 		});
-
-  // 	});  
-  // });
-
 }); //Don't remove ---- end of jQuery wrapper
-
-
 
 var lightbox = new FsLightbox();
 
@@ -293,25 +186,31 @@ var lightbox = new FsLightbox();
 // Nav
 // ========================================
 
-const links = document.querySelectorAll('a');
-links.forEach(link => {
-  const isExternal = link.href.startsWith('http') && !link.href.includes(window.location.origin) && !link.href.includes('dashboard') && !link.href.includes('hubspot.com') && !link.href.includes('calendly.com') && !link.href.includes('flywheelstaging.com');
+const links = document.querySelectorAll("a");
+links.forEach((link) => {
+  const isExternal =
+    link.href.startsWith("http") &&
+    !link.href.includes(window.location.origin) &&
+    !link.href.includes("dashboard") &&
+    !link.href.includes("hubspot.com") &&
+    !link.href.includes("calendly.com") &&
+    !link.href.includes("flywheelstaging.com");
   if (isExternal) {
-    link.addEventListener('click', e => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
-      const modal = document.querySelector('#speedbump');
-      const continueLink = modal.querySelector('.continue-link');
-      continueLink.setAttribute('href', link.href);
-      continueLink.setAttribute('target', '_blank');
-      const closeButton = modal.querySelector('.close-button');
-      closeButton.addEventListener('click', e => {
+      const modal = document.querySelector("#speedbump");
+      const continueLink = modal.querySelector(".continue-link");
+      continueLink.setAttribute("href", link.href);
+      continueLink.setAttribute("target", "_blank");
+      const closeButton = modal.querySelector(".close-button");
+      closeButton.addEventListener("click", (e) => {
         e.preventDefault();
-        modal.classList.remove('active');
+        modal.classList.remove("active");
       });
-      continueLink.addEventListener('click', e => {
-        modal.classList.remove('active');
+      continueLink.addEventListener("click", (e) => {
+        modal.classList.remove("active");
       });
-      modal.classList.add('active');
+      modal.classList.add("active");
     });
   }
 });

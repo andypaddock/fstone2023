@@ -23,16 +23,11 @@
             echo the_title();
         }?>
     </title>
-
-    <link rel="stylesheet" href="https://use.typekit.net/lym5ipm.css">
-    <!--TYPEKIT INJECT-->
-    <script src="https://kit.fontawesome.com/3be7b1018b.js" crossorigin="anonymous"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
-
-
+    <script src="https://kit.fontawesome.com/3be7b1018b.js" crossorigin="anonymous" defer></script>
+    <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script> -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
     <?php wp_head(); ?>
-
     <!-- Google Tag Manager -->
     <script>
     (function(w, d, s, l, i) {
@@ -44,41 +39,35 @@
         var f = d.getElementsByTagName(s)[0],
             j = d.createElement(s),
             dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
+        j.defer = true;
         j.src =
             'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-N3VK3CN');
     </script>
     <!-- End Google Tag Manager -->
-
     <script type="text/javascript">
     var _cgk = 'lUoFYsY8vr00fc2';
-
     (function() {
         var _cg = document.createElement('script');
         _cg.type = 'text/javascript';
-        _cg.async = true;
+        _cg.defer = true;
         _cg.src = 'https://v2.clickguardian.app/track.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(_cg, s);
     })();
     </script>
     <meta name="google-site-verification" content="y6_t_N57APJGUgqXxdiI054xesSXOP5vcqhRLqUbcjU" />
+    <!--TYPEKIT INJECT-->
 </head>
 
 <body <?php body_class(); ?>>
     <a class="skip-to-content-link" href="#main-content">
         Skip to content
     </a>
-
     <div class="mobile-message"><i class="fa-duotone fa-mobile"></i><span
             class="instructions"><?php the_field('rotate_instructions', 'options'); ?></span><span
             class="title"><?php the_field('rotate_title', 'options'); ?></span></div>
-
-
-
-
     <div class="mobile-header">
         <div class="header__inner">
             <?php if (!is_front_page()) : ?>
@@ -175,6 +164,18 @@
 
 
         <div class="navbar__left">
+            <div class="portal-link">
+                <?php
+                $link = get_field('portal_link', 'options');
+                if ($link) :
+                    $link_url = $link['url'];
+                    $link_title = $link['title'];
+                    $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+                <a class="font-display" href="<?php echo esc_url($link_url); ?>"
+                    target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+                <?php endif; ?>
+            </div>
             <nav class="left-nav">
                 <? wp_nav_menu(array(
                     'theme_location' => 'main-menu',
@@ -200,7 +201,7 @@
             </nav>
             <div class="portal-link">
                 <?php
-                $link = get_field('portal_link', 'options');
+                $link = get_field('book_call', 'options');
                 if ($link) :
                     $link_url = $link['url'];
                     $link_title = $link['title'];

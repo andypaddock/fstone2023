@@ -119,7 +119,7 @@
 </footer>
 <div class="mobile-toolbar">
     <div class="portal-link__mobile"> <?php
-                                        $link = get_field('portal_link', 'options');
+                                        $link = get_field('book_call', 'options');
                                         if ($link) :
                                             $link_url = $link['url'];
                                             $link_title = $link['title'];
@@ -131,16 +131,15 @@
     </div>
     <div class="contact-link__mobile">
 
-        <?php
+        <!--         <?php
         $link = get_field('call_button', 'options');
         if ($link) :
             $link_url = $link['url'];
             $link_title = $link['title'];
             $link_target = $link['target'] ? $link['target'] : '_self';
-        ?>
+        ?> -->
 
-        <a class="font-display" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"
-            aria-label="<?php echo esc_html($link_title); ?>"><?php echo esc_html($link_title); ?></a>
+        <a class="font-display" href="/contact-us" aria-label="Contact Us">contact us</a>
 
         <?php endif; ?>
 

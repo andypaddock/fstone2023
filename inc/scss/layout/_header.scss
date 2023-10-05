@@ -45,7 +45,7 @@ header {
       list-style: none;
       display: flex;
       li {
-        padding: 0rem 4rem;
+        padding: 0rem 2rem;
         border-right: 1px solid $color-white;
         line-height: 0.75rem;
         position: relative;
@@ -115,9 +115,9 @@ header {
 .navbar {
   &__left {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-column: center-start / col-end 4;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: full-start / col-end 4;
   }
   &__center {
     grid-column: col-start 6 / col-end 7;
@@ -125,14 +125,15 @@ header {
     align-items: flex-end;
   }
   &__right {
-    grid-column: col-start 8 / full-end;
+    grid-column: col-start 9 / full-end;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding-left: 0rem;
     nav {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      flex: 1;
     }
   }
 }

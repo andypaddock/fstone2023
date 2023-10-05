@@ -318,7 +318,7 @@
     font-size: 6rem;
     padding-bottom: 1rem;
   }
-  @media only screen and (max-height: 575.98px) and (orientation: landscape) {
+  @media only screen and (max-height: 475.98px) and (max-width: 900px) {
     display: flex;
   }
 }

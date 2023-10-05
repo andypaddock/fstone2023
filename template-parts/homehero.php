@@ -12,7 +12,7 @@ $heroMobile = get_field('hero_image_mobile', 'options');
             </div>
         </div>
         <div class="header__text-box fmbottom">
-            <h1 class="heading-1"><?php the_field('hero_title', 'options'); ?></h1>
+            <h1 class="heading-1"><?php the_field('hero_title', 'options', false, false); ?></h1>
         </div>
         <div class="mobile-home-nav">
 
@@ -38,8 +38,18 @@ $heroMobile = get_field('hero_image_mobile', 'options');
         <div class="mobile-home-title">
             <?php if (have_rows('mobile_headlines', 'options')) : ?>
             <?php while (have_rows('mobile_headlines', 'options')) : the_row(); ?>
-            <h2 class="heading-1 fmbottom"><?php the_sub_field('headline'); ?>
-            </h2>
+            <?php 
+$link = get_sub_field('headline');
+if( $link ): 
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+    ?>
+            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>">
+                <h2 class="heading-1 fmbottom"><?php echo esc_html( $link_title ); ?></h2>
+            </a>
+            <?php endif; ?>
+
             <?php endwhile; ?>
             <?php endif; ?>
         </div>

@@ -13,7 +13,7 @@ get_header(); ?>
             <div class="contact-title">
                 <h1 class="heading-1 text-cent"><?php the_title(); ?></h1>
             </div>
-            <div class="address-wrapper">
+            <div class="address-wrapper__form">
                 <div class="address-wrapper__links">
                     <?php
                     $link = get_field('call_button', 'options');
@@ -42,7 +42,21 @@ get_header(); ?>
                     </div>
                     <?php endif; ?>
                 </div>
+                <div class="form-wrapper">
+                    <!-- <?php
+                if (get_field('form_shortcode', 'options')) {
+                    echo do_shortcode(get_field('form_shortcode', 'options'));
+                }
+                ?> -->
+                    <div class="embed-form">
+                        <?php the_field('embed_code','options');?>
+                    </div>
+                </div>
 
+
+            </div>
+
+            <div class="address-wrapper">
                 <div class="address-wrapper__address">
                     <?php
                     $addressOne = get_field('address_block', 'options');
@@ -115,16 +129,6 @@ get_header(); ?>
                     <?php endif; ?>
 
 
-                </div>
-            </div>
-            <div class="form-wrapper">
-                <!-- <?php
-                if (get_field('form_shortcode', 'options')) {
-                    echo do_shortcode(get_field('form_shortcode', 'options'));
-                }
-                ?> -->
-                <div class="embed-form">
-                    <?php the_field('embed_code','options');?>
                 </div>
             </div>
 

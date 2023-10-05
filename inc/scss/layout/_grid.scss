@@ -110,17 +110,25 @@ section {
       .content-holder {
         flex-basis: 55rem;
       }
+      &.additional {
+        grid-column: center-start / col-end 6;
+        margin: 0;
+      }
+    }
+    .additional-left,
+    .additional-right {
+      margin: 5rem 2rem;
     }
     &__right {
       grid-column: col-end 7 / full-end;
-      height: 100vh;
-      position: sticky;
-      position: -webkit-sticky;
-      position: -moz-sticky;
-      position: -ms-sticky;
-      position: -o-sticky;
-      top: 0;
-      margin-top: -16.9rem;
+      // height: 100vh;
+      // position: sticky;
+      // position: -webkit-sticky;
+      // position: -moz-sticky;
+      // position: -ms-sticky;
+      // position: -o-sticky;
+      // top: 0;
+      // margin-top: -16.9rem;
       z-index: -1;
       @include backgroundCover;
       @include respond(tab-port) {
@@ -129,10 +137,25 @@ section {
         position: initial;
         grid-column: full-start / full-end;
       }
+      &.sticky-image {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+      }
+      &.no-break {
+        grid-column: col-end 6 / center-end;
+      }
+      // .additional-right {
+      //   margin: 5rem 0;
+      // }
     }
     &__full {
       grid-column: center-start / center-end;
       min-height: calc(100vh - 38rem);
+    }
+    &__fullwidth {
+      grid-column: center-start / center-end;
+      margin: 5rem 2rem;
     }
     /* width */
     ::-webkit-scrollbar {
